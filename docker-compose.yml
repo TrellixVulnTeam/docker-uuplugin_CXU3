@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  uuplugin:
+    cap_add: ["NET_ADMIN"]
+    build: .
+    environment:
+      - UU_LAN_ADDRESS=
+      - UU_LAN_GATEWAY=
+      - UU_LAN_NETMASK=255.255.255.0
+      - UU_LAN_DNS=119.29.29.29
+    volumes:
+      - ./uuplugin:/uuplugin:rw
